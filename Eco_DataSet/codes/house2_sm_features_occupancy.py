@@ -344,7 +344,7 @@ y_test = y[int (0.8 * len(X)):]
 #create training and testing samples
 #X_train, X_test, y_train, y_test = cross_validation.train_test_split(X,y, test_size = 0.2)
 
-"""
+
 #define the classifier:multi-layer perceptron algorithm that trains using Backpropagation
 clf1 = neural_network.MLPClassifier(solver='lbfgs', alpha=1e-5,hidden_layer_sizes=(10, 8), random_state=1)
 clf1 = clf1.fit(X_train_validation , y_train_validation)
@@ -373,12 +373,8 @@ plot_confusion_matrix(cnf_matrix_2, classes=["unoccupied", "Occupied"], normaliz
 
 
 #define the classifier:
-clf3 = svm.SVC(gamma=2, C=1,kernel='linear')
+clf3 = svm.SVC(gamma=2, C=1)
 clf3 = clf3.fit(X_train_validation , y_train_validation)
-coef_importance_3 = clf3.coef_
-norm_coef_importance_3 = [100*float(i)/sum(coef_importance_3) for i in coef_importance_3]
-print "norm_coef_importance_3:"
-print norm_coef_importance_3
 
 y_predict_3 = clf3.predict(X_test) 
 cnf_matrix_3 = confusion_matrix(y_test, y_predict_3)
@@ -448,7 +444,7 @@ plt.legend(handles=[MLPline, KNNline, SVMline, RandomForestline])
 plt.ylabel('Cross Validation Accuracy Score')
 plt.xlabel('Tests')
 plt.title('House#2 Smart Meter Features Occupancy Prediction')
-"""
+
 
     
 

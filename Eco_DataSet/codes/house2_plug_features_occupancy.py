@@ -248,16 +248,6 @@ y_test = y[int (0.8 * len(X)):]
 #define the classifier:multi-layer perceptron algorithm that trains using Backpropagation
 clf1 = neural_network.MLPClassifier(solver='sgd', alpha=1e-5,hidden_layer_sizes=(10, 8), random_state=1)
 clf1 = clf1.fit(X_train_validation , y_train_validation)
-#==============================================================================
-# layer_importance_1 = clf1.coefs_
-# num_layers = clf1.n_layers_
-# norm_layer_importance_1 = [100*float(i)/sum(layer_importance_1) for i in layer_importance_1]
-# print "number of layers:"
-# print num_layers
-# print "norm_layer_importance_1:"
-# print norm_layer_importance_1
-#==============================================================================
-
 y_predict_1 = clf1.predict(X_test) 
 cnf_matrix_1 = confusion_matrix(y_test, y_predict_1)
 # plot unnormalized confusion matrix
@@ -283,12 +273,8 @@ plot_confusion_matrix(cnf_matrix_2, classes=["unoccupied", "Occupied"], normaliz
 
 
 #define the classifier: SVM
-clf3 = svm.SVC(gamma=2, C=1, kernel='linear')
+clf3 = svm.SVC(gamma=2, C=1)
 clf3 = clf3.fit(X_train_validation , y_train_validation)
-coef_importance_3 = clf3.coef_
-norm_coef_importance_3 = [100*float(i)/sum(coef_importance_3) for i in coef_importance_3]
-print "norm_coef_importance_3:"
-print norm_coef_importance_3
 
 y_predict_3 = clf3.predict(X_test) 
 cnf_matrix_3 = confusion_matrix(y_test, y_predict_3)
