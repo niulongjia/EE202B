@@ -1,0 +1,50 @@
+Household 5
+===========
+
+For a general description of the data (e.g., structure of the files), see '01_doc.txt'.
+
+
+SMART METER DATA
+----------------
+
+Measurement period:
+27.06.12 to 31.01.13
+
+Coverage:
+No. days: 215, Coverage: 99.05%
+
+
+
+PLUG DATA
+---------
+
+Measurement period:
+27.06.12 to 31.01.13
+
+01: Tablet (no. days: 218, coverage: 97.87%)
+02: Coffee machine (no. days: 218, coverage: 95.16%)
+03: Fountain (no. days: 71, coverage: 99.43%) (*)
+04: Microwave (no. days: 218, coverage: 97.87%)
+05: Fridge (no. days: 218, coverage: 97.87%)
+06: Entertainment (no. days: 192, coverage: 89.14%) (**)
+07: PC (no. days: 218, coverage: 97.87%) (***)
+08: Kettle (no. days: 25, coverage: 76.64%)
+
+
+Comments:
+
+(*) The fountain ran a pump throughout a day, and it was illuminated from 7 p.m. to 10 p.m.
+(**) Entertainment consists of TV and stereo
+(***) Including router, sheeva plug computer, and printer
+
+Although a freezer exists in the household, it was not possible to measure the freezer with a smart plug: it was located in the basement, too far away from the other plugs.
+
+
+
+OCCUPANCY DATA
+--------------
+
+The occupancy data is available for summer (01_summer.csv) and winter (01_winter.csv).
+Each row in the csv file represents a day (specified by the first column). Each day consists of 86400 fields indicating presence (1) and absence (0) for each second of the day. Thus the csv file contains 86401 columns.
+
+Occupants specified presence/absence through a tablet computer. As this process is prone to errors (like any method capturing ground truth...) we filtered the data as described in our paper "Occupancy Detection from Electricity Consumption Data". Here we provide the filtered data, which we also used for our analysis to infer occupancy from electricity consumption data.
