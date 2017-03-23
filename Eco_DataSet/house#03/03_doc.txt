@@ -1,0 +1,46 @@
+Household 3
+===========
+
+For a general description of the data (e.g., structure of the files), see '01_doc.txt'.
+
+
+SMART METER DATA
+----------------
+
+Measurement period:
+26.07.12 to 31.01.13
+
+Coverage:
+No. days: 138, Coverage: 98.89%
+
+
+
+PLUG DATA
+---------
+
+Measurement period:
+23.10.12 to 31.01.13
+
+01: Tablet (no. days: 104, coverage: 94.5%)
+02: Freezer (no. days: 104, coverage: 90.71%)
+03: Coffee machine (no. days: 67, coverage: 70.79%)
+04: PC (no. days: 42, coverage: 64%)
+05: Fridge (no. days: 47, coverage: 56%)
+06: Kettle (no. days: 42, coverage: 67.82%)
+07: Entertainment (no. days: 48, coverage: 67.65%) (*)
+
+Comments:
+
+(*) Entertainment consists of TV and stereo
+
+The low coverage is due to the concrete ceiling in the basement, which disturbed the radio connection between our gateway and the plugs.
+
+
+
+OCCUPANCY DATA
+--------------
+
+The occupancy data is available for summer (01_summer.csv) and winter (01_winter.csv).
+Each row in the csv file represents a day (specified by the first column). Each day consists of 86400 fields indicating presence (1) and absence (0) for each second of the day. Thus the csv file contains 86401 columns.
+
+Occupants specified presence/absence through a tablet computer. As this process is prone to errors (like any method capturing ground truth...) we filtered the data as described in our paper "Occupancy Detection from Electricity Consumption Data". Here we provide the filtered data, which we also used for our analysis to infer occupancy from electricity consumption data.
